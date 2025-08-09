@@ -28,7 +28,7 @@ tukang_collection = db.tukang
 # Pydantic models
 class TukangCreate(BaseModel):
     name: str = Field(..., min_length=1, max_length=100)
-    skills: str = Field(..., regex="^(Listrik|Cat|Bangunan|Servis AC|Lainnya)$")
+    skills: str = Field(..., pattern="^(Listrik|Cat|Bangunan|Servis AC|Lainnya)$")
     city: str = Field(..., min_length=1, max_length=50)
     whatsapp_number: str = Field(..., min_length=10, max_length=15)
 
